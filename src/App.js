@@ -17,7 +17,6 @@ const App = () => {
   const [perpage, setperpage] = useState(4)
   const [sortClicked, setsortClicked] = useState(false)
   useEffect(() => {
-
     var temp = [
       { "name": "Rahul Gupta", "isfavorite": true },
       { "name": "Shivangi Sharma", "isfavorite": false },
@@ -90,18 +89,45 @@ const App = () => {
       else {
         // setcontact([...contact, { "name": e.target.value, "isfavorite": false }])
         // setoriginalContact([...contact, { "name": e.target.value, "isfavorite": false }])
-        var temp = [{ "name": e.target.value, "isfavorite": false }]
-        originalContact.map(item => (
-          temp.push(item)
-        ))
-        const offset = (activePage - 1) * perpage
-        const data1 = temp
-        const upperlimit = offset + perpage
-        const slice = data1.slice(offset, upperlimit)
-        setcontact(slice)
-        setoriginalContact(temp)
-        setinputName("")
-        document.getElementById('new_contact').value = ""
+        if(e.target.value === ''){
+          alert("Please enter a name and press enter")
+        }
+        else{
+          var list = []
+          originalContact.map(item => {
+            list.push(item.name)
+          })
+          if(!list.includes(e.target.value)){
+            var temp = [{ "name": e.target.value, "isfavorite": false }]
+            originalContact.map(item => (
+              temp.push(item)
+            ))
+            const offset = (activePage - 1) * perpage
+            const data1 = temp
+            const upperlimit = offset + perpage
+            const slice = data1.slice(offset, upperlimit)
+            setcontact(slice)
+            setoriginalContact(temp)
+            setinputName("")
+            document.getElementById('new_contact').value = ""
+          }
+          else{
+            alert("Contact already exists")
+          }
+        }
+        
+        // var temp = [{ "name": e.target.value, "isfavorite": false }]
+        // originalContact.map(item => (
+        //   temp.push(item)
+        // ))
+        // const offset = (activePage - 1) * perpage
+        // const data1 = temp
+        // const upperlimit = offset + perpage
+        // const slice = data1.slice(offset, upperlimit)
+        // setcontact(slice)
+        // setoriginalContact(temp)
+        // setinputName("")
+        // document.getElementById('new_contact').value = ""
       }
 
 
@@ -202,13 +228,13 @@ const App = () => {
                       <>
                         <div onClick={e => favoriteClicked(e, item, index, "unselect")} className={classes['Name-star1']} >
                         </div>
-                       
+
                       </>
                       :
                       <>
-                        <div  onClick={e => favoriteClicked(e, item, index, "select")} className={classes['Name-star']} >
+                        <div onClick={e => favoriteClicked(e, item, index, "select")} className={classes['Name-star']} >
                         </div>
-                        
+
                       </>
                     }
 
