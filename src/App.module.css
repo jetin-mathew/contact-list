@@ -1,0 +1,137 @@
+.Name-Box{
+    border:solid 1px;
+    width:20%;
+    margin-left: 42%;
+    margin-top: 1%;
+    background-color: white;
+    border-radius: 18px;
+}
+.search-bar{ 
+    box-shadow: 0px 2px 9px 1px lightgrey;
+    border: none;
+    margin-top: 5%;
+    margin-left: 4%;
+    width: 29%;
+}
+.Name-Title{
+    border-top-left-radius: 17px;
+    background-color: grey;
+    border-top-right-radius: 17px;
+    /* width: 100.25; */
+    margin-left: -0.25%;
+    height: 5vh;
+    padding-top: 2%;
+}
+.Name-Title-Text{
+    color: white;
+    /* margin-left: 5%; */
+    font-size: large;
+    font-weight: 700;
+}
+.Name-card{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+.Name-contact{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+}
+.Name-action{
+    width: 35%;
+    display: flex;  
+    justify-content: space-around;  
+}
+.Name-star{
+    visibility: hidden;
+    font-size: 30px;
+    cursor:pointer;
+    color: gold;
+    /* margin-top: 10%!important; */
+}
+
+.Name-star:before{
+    content: "\2606";
+    position: absolute;
+    visibility: visible;
+    margin-top: -0.85% !important;
+    margin-left: -0.5% !important;
+    /* box-shadow: 2px 2px 2px 2px lightgrey;
+    height: 5vh; */
+      
+}
+
+
+/* .Name-star:checked:before{
+    content: "\2605";
+    position: absolute;
+    margin-top: -1.0% !important;
+    margin-left: -0.5% !important;
+} */
+.Name-star1{
+    visibility: hidden;
+    font-size: 30px;
+    cursor:pointer;
+    color: gold;
+}
+.Name-star1:before{
+    content: "\2605";
+    position: absolute;
+    visibility: visible;
+    margin-top: -0.85% !important;
+    margin-left: -0.5% !important;
+   
+}
+/* .Name-star1:checked:before{
+    content: "\2605";
+    position: absolute;
+    margin-top: -0.85% !important;
+    margin-left: -0.5% !important;
+} */
+
+.Name-delete{
+    margin-left: 20%;
+}
+.subtext{
+    font-size: small;
+    color: grey;
+    text-align: left;
+}
+.Input-Form{
+    margin-bottom: 3%;
+}
+.input-box{
+    height: 3vh;
+    width:97%;
+    border: none;
+    padding:12%
+}
+.input-box:focus{
+  outline: none;
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+@media only screen and (max-width: 600px) {
+   .search-bar{
+       width:100%;
+       margin-left: 0%;
+   }
+   .Name-Box{
+    border:solid 1px;
+    width:100%;
+    margin-left: 0%;
+    margin-top: 5%;
+    background-color: white;
+    border-radius: 18px;
+}
+.Name-delete{
+    margin-top: 8%;
+}
+  }
